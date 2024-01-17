@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Аналитик</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}?{% now "U" %}">
+</head>
+<body>
+<header>
+    <h2><strong>Профессия Аналитик</strong></h2>
+</header>
+<div>
+    <aside>
+        <div class="logo">
+            <a href="/"><p>Analyst</p></a>
+        </div>
+        <ul>
+            <li><a href="demand"><i class="fa-solid fa-money-check-dollar"></i>Востребованность</a></li>
+            <li><a href="geography"><i class="fa-solid fa-earth-europe"></i>География</a></li>
+            <li><a href="skills"><i class="fa-solid fa-code"></i>Ключевые навыки</a></li>
+            <li><a href="last_vacancies"><i class="fa-solid fa-clipboard-list"></i>Вакансии</a>
+            </li>
+        </ul>
+    </aside>
+</div>
+<div class="page">
+    <main class="main">
+    <h1 style="text-align: center">Статистика вакансий аналитика по городам</h1>
+        <div class="many-tables-container">
+            <table>
+                <thead>
+                <tr>
+                    <th>{{ first_parameter }}</th>
+                    <th>{{ second_parameter }}</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for e in geo_average %}
+                    <tr>
+                        <td>{{ e.area }}</td>
+                        <td>{{ e.average }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+            <table>
+                <thead>
+                <tr>
+                    <th>{{ first_parameter }}</th>
+                    <th>{{ third_parameter }}</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for e in geo_count %}
+                    <tr>
+                        <td>{{ e.area }}</td>
+                        <td>{{ e.count }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div style="display: flex; padding-top: 20px; justify-content: center;">
+            <img src="../media/geo_graphs.png" style="width: 100%; max-width: 1530px">
+        </div>
+    </main>
+    <footer>
+        <h2 style='text-align: right; padding-right: 40px;'>Васюк Анастасия Андреевна РИ-220932</h2>
+    </footer>
+</div>
+</body>
+</html>

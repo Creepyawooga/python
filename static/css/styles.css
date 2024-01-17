@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+body {
+    min-height: 100%;
+    background: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+aside {
+    height: 100%;
+    width: 15%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    padding-top: 20px;
+    background: #1e2223;
+}
+
+aside img {
+    border: 1px solid #111111;
+    background: #ffffff;
+    width: 150px;
+    border-radius: 10px;
+    margin-left: 35px;
+}
+
+aside ul {
+    list-style: none;
+}
+
+aside ul li {
+    display: block;
+    margin-top: 20px;
+    transition: all .6s ease;
+}
+
+.logo p {
+    color: #80b5d5;
+    font-size: 40px;
+    width: 170px;
+    text-align: center
+}
+
+
+.logo p:hover {
+    color: white;
+    border-color: white;
+
+}
+
+
+.logo {
+    display: flex;
+    justify-content: space-around;
+
+
+}
+
+
+aside ul li a {
+    color: #80b5d5;
+}
+
+aside h4 {
+    padding: 30px 0 0 20px;
+}
+
+aside ul li:hover, aside ul a:hover {
+    color: white;
+    transform: scale(1.05);
+}
+
+.title h1 {
+    font-size: 40px;
+    color: #fcfffc;
+    margin-bottom: 50px;
+}
+
+
+header {
+    margin-bottom: auto;
+    padding: 10px 10px 20px;
+    background: #80b5d5;
+    box-shadow: 0 0 10px #111111;
+}
+
+header h2 {
+    color: #111111;
+    padding: 9px 3% 0 0;
+    text-align: right;
+    margin: 0;
+}
+
+.head_img {
+    color: #f64c72;
+    float: left;
+    width: 30px;
+    height: auto;
+}
+
+footer {
+    font-weight: lighter;
+    text-align: center;
+    background: #80b5d5;
+    margin-top: auto;
+    color: #111111;
+    box-shadow: 0 0 10px #111111;
+}
+
+.page {
+    overflow: hidden;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+}
+
+.main {
+    margin-left: 15%;
+    padding: 20px 100px 40px 100px;
+}
+
+.home_img {
+    border-radius: 20px;
+    box-shadow: 0 0 10px #80b5d5, 0 0 20px #80b5d5;
+    float: right;
+    margin: 30px 80px 80px;
+    width: 30%;
+    height: auto;
+}
+
+.skill_list p {
+    width: 100%;
+    color: #111111;
+    text-align: center;
+}
+
+.skill_list a {
+    color: #111111;
+    text-align: center;
+}
+
+.skill_list {
+    position: page;
+    font-size: 25px;
+
+
+}
+
+.skill_list div {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    float: left;
+    width: 13%;
+    height: 200px;
+    margin: 100px;
+}
+
+.skills_img {
+    width: 100%;
+}
+
+.right-img {
+    float: right;
+    padding: 30px 0 30px 30px;
+}
+
+p {
+    text-align: justify;
+}
+
+aside ul {
+    display: grid;
+    justify-content: center;
+    padding: 0;
+    font-size: 18px;
+}
+
+table, tr, td, th {
+    border: 1px solid #333;
+    text-align: center;
+    padding: 5px;
+}
+
+table {
+    border-collapse: collapse;
+    margin: 0 auto 10px;
+    overflow-x: auto;
+    font-size: 14px;
+}
+
+table tbody tr:nth-child(odd) {
+    background: #fff;
+}
+
+table tbody tr:nth-child(even) {
+    background: #F7F7F7;
+
+}
+
+.table-container {
+    display: flex;
+}
+
+.many-tables-container {
+    display: flex;
+    flex-wrap: wrap;
+    -ms-flex-align: end;
+    column-gap: 150px;
+}
+

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Аналитик</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}?{% now "U" %}">
+</head>
+<body>
+<header>
+    <h2><strong>Профессия Аналитик</strong></h2>
+</header>
+<div>
+    <aside>
+        <div class="logo">
+            <a href="/"><p>Analyst</p></a>
+        </div>
+        <ul>
+            <li><a href="demand"><i class="fa-solid fa-money-check-dollar"></i>Востребованность</a></li>
+            <li><a href="geography"><i class="fa-solid fa-earth-europe"></i>География</a></li>
+            <li><a href="skills"><i class="fa-solid fa-code"></i>Ключевые навыки</a></li>
+            <li><a href="last_vacancies"><i class="fa-solid fa-clipboard-list"></i>Вакансии</a>
+            </li>
+        </ul>
+    </aside>
+</div>
+<div class="page">
+    <main class="main">
+    <h1 style="text-align: center">Последние вакансии аналитика на hh.ru</h1>
+        {% for vacancy in vacancies %}
+            <div>
+                <h2>{{ vacancy.name }}</h2>
+                <p><b>Зарплата:</b> {{ vacancy.salary }}</p>
+                <p>{{ vacancy.description|safe }}</p>
+                {% if vacancy.key_skills != "" %}
+                    <p><b>Навыки:</b> {{ vacancy.key_skills }}</p>
+                {% endif %}
+                {% if vacancy.employer.name != "" %}
+                    <p><b>Компания:</b> {{ vacancy.employer.name }}</p>
+                {% endif %}
+                {% if vacancy.area_name != "" %}
+                    <p><b>Расположение:</b> {{ vacancy.area }}</p>
+                {% endif %}
+                {% if vacancy.published_at != "" %}
+                    <p><b>Дата публикации:</b> {{ vacancy.published_at|slice:"0:10" }}</p>
+                {% endif %}
+                <hr>
+            </div>
+        {% endfor %}
+    </main>
+    <footer>
+        <h2 style='text-align: right; padding-right: 40px;'>Васюк Анастасия Андреевна РИ-220932</h2>
+    </footer>
+</div>
+</body>
+</html>
+
